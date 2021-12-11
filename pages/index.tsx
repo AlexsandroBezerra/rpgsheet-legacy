@@ -1,29 +1,9 @@
-import { signIn, useSession } from "next-auth/react"
 import Head from "next/head"
+import { signIn } from "next-auth/react"
 import { useRouter } from "next/router"
-import { useEffect } from "react"
 
 function Home() {
-  const { replace } = useRouter()
-  const { data: session, status } = useSession()
-
-  // useEffect(() => {
-  //   if (session) {
-  //     replace("/dashboard")
-  //   }
-  // }, [session, replace])
-
-  // if (status === "loading") {
-  //   return (
-  //     <>
-  //       <Head>
-  //         <title>rpgsheet</title>
-  //       </Head>
-
-  //       <h1>carregando...</h1>
-  //     </>
-  //   )
-  // }
+  const { query } = useRouter()
 
   return (
     <>
@@ -39,6 +19,8 @@ function Home() {
       >
         Sign in with github
       </button>
+
+      {query.error && "Erro ao fazer login"}
     </>
   )
 }
