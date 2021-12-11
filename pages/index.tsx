@@ -1,5 +1,15 @@
+import Head from "next/head"
+
 function Home() {
-  return <h1>Hello World</h1>
+  return (
+    <>
+    <Head>
+      <title>rpgsheet</title>
+    </Head>
+    
+    <h1>rpgsheet</h1>
+    </>
+  )
 }
 
 export default Home
