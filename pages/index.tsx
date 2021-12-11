@@ -20,7 +20,14 @@ function Home() {
         Sign in with github
       </button>
 
-      {query.error && "Erro ao fazer login"}
+      <button
+        type="button"
+        onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+      >
+        Sign in with google
+      </button>
+
+      <p>{query.error && "Erro ao fazer login"}</p>
     </>
   )
 }
