@@ -1,7 +1,7 @@
-import Head from "next/head"
-import { signOut, useSession } from "next-auth/react"
+import Head from 'next/head'
+import { signOut, useSession } from 'next-auth/react'
 
-import { withAuthentication } from "~/hoc/withAuthentication"
+import { withAuthentication } from '~/hoc/withAuthentication'
 
 function Home() {
   const { data: session } = useSession()
@@ -17,7 +17,7 @@ function Home() {
         Signed with: {session?.user?.name} - {session?.user?.email}
       </h2>
 
-      <button type="button" onClick={() => signOut({ callbackUrl: "/" })}>
+      <button type="button" onClick={() => signOut({ callbackUrl: '/' })}>
         Sign out
       </button>
     </>

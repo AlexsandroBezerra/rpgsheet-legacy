@@ -1,9 +1,9 @@
-import NextAuth from "next-auth"
-import GithubProvider from "next-auth/providers/github"
-import GoogleProvider from "next-auth/providers/google"
-import { FaunaAdapter } from "@next-auth/fauna-adapter"
+import NextAuth from 'next-auth'
+import GithubProvider from 'next-auth/providers/github'
+import GoogleProvider from 'next-auth/providers/google'
+import { FaunaAdapter } from '@next-auth/fauna-adapter'
 
-import { faunaClient } from "~/services/fauna"
+import { faunaClient } from '~/services/fauna'
 
 export default NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
@@ -19,9 +19,9 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
       authorization: {
         params: {
-          prompt: "consent",
-          access_type: "offline",
-          response_type: "code"
+          prompt: 'consent',
+          access_type: 'offline',
+          response_type: 'code'
         }
       }
     })

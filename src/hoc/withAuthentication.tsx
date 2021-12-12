@@ -1,6 +1,6 @@
-import { NextPage } from "next"
-import { useSession } from "next-auth/react"
-import { useRouter } from "next/router"
+import { NextPage } from 'next'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
 
 export function withAuthentication(Page: NextPage<never>) {
   function Wrapped(props: never) {
@@ -9,11 +9,11 @@ export function withAuthentication(Page: NextPage<never>) {
     const { status } = useSession({
       required: true,
       onUnauthenticated() {
-        router.push("/")
-      },
+        router.push('/')
+      }
     })
 
-    if (status === "loading") {
+    if (status === 'loading') {
       return <h1>Carregando...</h1>
     }
 
