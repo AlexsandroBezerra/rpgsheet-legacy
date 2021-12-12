@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { signIn } from 'next-auth/react'
+import { Box, Button, Heading, Stack, Text } from '@chakra-ui/react'
 
 function Home() {
   const { query } = useRouter()
@@ -11,17 +12,23 @@ function Home() {
         <title>rpgsheet</title>
       </Head>
 
-      <h1>rpgsheet</h1>
+      <Stack spacing="1rem">
+        <Heading>rpgsheet</Heading>
 
-      <button type="button" onClick={() => signIn('github', { callbackUrl: '/dashboard' })}>
-        Sign in with github
-      </button>
+        <Box>
+          <Button type="button" onClick={() => signIn('github', { callbackUrl: '/dashboard' })}>
+            Sign in with github
+          </Button>
+        </Box>
 
-      <button type="button" onClick={() => signIn('google', { callbackUrl: '/dashboard' })}>
-        Sign in with google
-      </button>
+        <Box>
+          <Button type="button" onClick={() => signIn('google', { callbackUrl: '/dashboard' })}>
+            Sign in with google
+          </Button>
+        </Box>
+      </Stack>
 
-      <p>{query.error && 'Erro ao fazer login'}</p>
+      <Text>{query.error && 'Erro ao fazer login'}</Text>
     </>
   )
 }

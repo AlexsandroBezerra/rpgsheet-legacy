@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { signOut, useSession } from 'next-auth/react'
 
 import { withAuthentication } from '~/hoc/withAuthentication'
+import { Button, Heading } from '@chakra-ui/react'
 
 function Home() {
   const { data: session } = useSession()
@@ -12,14 +13,14 @@ function Home() {
         <title>Dashoard | rpgsheet</title>
       </Head>
 
-      <h1>Dashboard</h1>
-      <h2>
+      <Heading>Dashboard</Heading>
+      <Heading as="h2">
         Signed with: {session?.user?.name} - {session?.user?.email}
-      </h2>
+      </Heading>
 
-      <button type="button" onClick={() => signOut({ callbackUrl: '/' })}>
+      <Button type="button" onClick={() => signOut({ callbackUrl: '/' })}>
         Sign out
-      </button>
+      </Button>
     </>
   )
 }
