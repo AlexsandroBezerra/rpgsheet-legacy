@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 'lts/*'
-          cache: 'yarn'
+          # cache: 'yarn'
 
       - name: Install Node.js dependencies
         run: yarn install
