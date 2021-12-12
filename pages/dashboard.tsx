@@ -1,5 +1,7 @@
-import { signOut, useSession } from "next-auth/react"
 import Head from "next/head"
+import { signOut, useSession } from "next-auth/react"
+
+import { withAuthentication } from "~/hoc/withAuthentication"
 
 function Home() {
   const { data: session } = useSession()
@@ -22,4 +24,4 @@ function Home() {
   )
 }
 
-export default Home
+export default withAuthentication(Home)

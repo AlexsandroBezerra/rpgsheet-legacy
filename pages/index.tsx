@@ -1,6 +1,6 @@
 import Head from "next/head"
-import { signIn } from "next-auth/react"
 import { useRouter } from "next/router"
+import { signIn } from "next-auth/react"
 
 function Home() {
   const { query } = useRouter()
