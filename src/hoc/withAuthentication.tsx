@@ -1,3 +1,4 @@
+import { Center, Spinner } from '@chakra-ui/react'
 import { NextPage } from 'next'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
@@ -14,7 +15,11 @@ export function withAuthentication(Page: NextPage<never>) {
     })
 
     if (status === 'loading') {
-      return <h1>Carregando...</h1>
+      return (
+        <Center h="100vh">
+          <Spinner />
+        </Center>
+      )
     }
 
     return <Page {...props} />

@@ -1,26 +1,33 @@
 import Head from 'next/head'
-import { signOut, useSession } from 'next-auth/react'
+import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react'
 
 import { withAuthentication } from '~/hoc/withAuthentication'
-import { Button, Heading } from '@chakra-ui/react'
+import { Header, Sidebar } from '~/components'
+import { signOut } from 'next-auth/react'
 
 function Home() {
-  const { data: session } = useSession()
-
   return (
     <>
       <Head>
         <title>Dashoard | rpgsheet</title>
       </Head>
 
-      <Heading>Dashboard</Heading>
-      <Heading as="h2">
-        Signed with: {session?.user?.name} - {session?.user?.email}
-      </Heading>
+      <Flex direction="column" h="100vh">
+        <Header />
 
-      <Button type="button" onClick={() => signOut({ callbackUrl: '/' })}>
-        Sign out
-      </Button>
+        <Flex w="100%" my="6" maxWidth={1480} mx="auto" px="6">
+          <Sidebar />
+
+          <Box>
+            <Heading as="h1">Dashboard</Heading>
+            <Text>Em breve...</Text>
+
+            <Button type="button" onClick={() => signOut()} mt="1.5rem">
+              Log out
+            </Button>
+          </Box>
+        </Flex>
+      </Flex>
     </>
   )
 }
