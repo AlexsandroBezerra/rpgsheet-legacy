@@ -1,7 +1,9 @@
 import Head from 'next/head'
 
+const APP_URL = process.env.NEXTAUTH_URL || `https://${process.env.VERCEL_URL}` || ''
+
 const pageTitle = 'rpgsheet - Crie as fichas dos seus personagens de RPG'
-const pageImage = '/og-image.png'
+const pageImage = `${APP_URL}/og-image.png`
 const description =
   'Com o rpgsheet, você cria fichas de personagens e usa as fichas em sessões de RPG presenciais com o celular, ou sessões online direto do computador.'
 
@@ -30,8 +32,8 @@ export function SEO() {
 
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@rocketseat" />
-      <meta name="twitter:creator" content="@rocketseat" />
+      <meta name="twitter:site" content="@_sandrobez" />
+      <meta name="twitter:creator" content="@_sandrobez" />
       <meta name="twitter:image" content={pageImage} />
       <meta name="twitter:image:src" content={pageImage} />
       <meta name="twitter:image:alt" content="Logo da rpgsheet" />
