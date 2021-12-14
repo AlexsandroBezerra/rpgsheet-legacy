@@ -8,7 +8,7 @@ function Home() {
   return (
     <>
       <Head>
-        <title>rpgsheet</title>
+        <title>rpgsheet - Crie as fichas dos seus personagens de RPG</title>
       </Head>
 
       <Center w="100vw" h="100vh">
