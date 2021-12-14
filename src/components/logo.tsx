@@ -1,5 +1,5 @@
-import { Text } from '@chakra-ui/react'
 import { memo } from 'react'
+import { Text } from '@chakra-ui/react'
 
 function LogoComponent() {
   return (

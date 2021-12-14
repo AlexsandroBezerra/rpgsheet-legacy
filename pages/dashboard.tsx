@@ -1,35 +1,32 @@
-import Head from 'next/head'
-import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react'
+import { useSession } from 'next-auth/react'
+import { Center, Spinner } from '@chakra-ui/react'
 
-import { withAuthentication } from '~/hoc/withAuthentication'
-import { Header, Sidebar } from '~/components'
-import { signOut } from 'next-auth/react'
+import dynamic from 'next/dynamic'
+import { useRouter } from 'next/router'
 
-function Home() {
-  return (
-    <>
-      <Head>
-        <title>Dashoard | rpgsheet</title>
-      </Head>
+const Dashboard = dynamic<{}>(() => import('~/pages/Dashboard').then(mod => mod.Dashboard), {
+  loading: () => <>Carregando...</>
+})
 
-      <Flex direction="column" h="100vh">
-        <Header />
+function DashboardPage() {
+  const router = useRouter()
 
-        <Flex w="100%" my="6" maxWidth={1480} mx="auto" px="6">
-          <Sidebar />
+  const { status } = useSession({
+    required: true,
+    onUnauthenticated() {
+      router.push('/')
+    }
+  })
 
-          <Box>
-            <Heading as="h1">Dashboard</Heading>
-            <Text>Em breve...</Text>
+  if (status === 'loading') {
+    return (
+      <Center h="100vh">
+        <Spinner />
+      </Center>
+    )
+  }
 
-            <Button type="button" onClick={() => signOut()} mt="1.5rem">
-              Log out
-            </Button>
-          </Box>
-        </Flex>
-      </Flex>
-    </>
-  )
+  return <Dashboard />
 }
 
-export default withAuthentication(Home)
+export default DashboardPage
