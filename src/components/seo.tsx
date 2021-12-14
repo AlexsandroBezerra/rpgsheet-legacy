@@ -10,6 +10,9 @@ const description =
 export function SEO() {
   return (
     <Head>
+      <meta name="title" content={pageTitle} />
+      <meta name="description" content={description} />
+
       <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
       <meta name="MobileOptimized" content="320" />
       <meta name="HandheldFriendly" content="True" />
