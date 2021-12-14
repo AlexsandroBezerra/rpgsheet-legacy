@@ -1,37 +1,42 @@
 import Head from 'next/head'
 
+const pageTitle = 'rpgsheet - Crie as fichas dos seus personagens de RPG'
+const pageImage = '/og-image.png'
+const description =
+  'Com o rpgsheet, você cria fichas de personagens e usa as fichas em sessões de RPG presenciais com o celular, ou sessões online direto do computador.'
+
 export function SEO() {
   return (
     <Head>
-      <meta name="title" content="rpgsheet - Crie as fichas dos seus personagens de RPG" />
-      <meta
-        name="description"
-        content="Com o rpgsheet, você cria fichas de personagens e usa as fichas em sessões de RPG presenciais com o celular, ou sessões online direto do computador."
-      />
+      <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
+      <meta name="MobileOptimized" content="320" />
+      <meta name="HandheldFriendly" content="True" />
+      <meta name="theme-color" content="#181B23" />
+      <meta name="msapplication-TileColor" content="#181B23" />
+      <meta name="referrer" content="no-referrer-when-downgrade" />
+      <meta name="google" content="notranslate" />
 
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={description} />
+      <meta property="og:locale" content="pt_BR" />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://metatags.io/" />
-      <meta property="og:title" content="rpgsheet - Crie as fichas dos seus personagens de RPG" />
-      <meta
-        property="og:description"
-        content="Com o rpgsheet, você cria fichas de personagens e usa as fichas em sessões de RPG presenciais com o celular, ou sessões online direto do computador."
-      />
-      <meta
-        property="og:image"
-        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
-      />
+      <meta property="og:site_name" content={pageTitle} />
+      <meta property="og:image" content={pageImage} />
+      <meta property="og:image:secure_url" content={pageImage} />
+      <meta property="og:image:alt" content="Logo da rpgsheet" />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
 
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="https://metatags.io/" />
-      <meta property="twitter:title" content="rpgsheet - Crie as fichas dos seus personagens de RPG" />
-      <meta
-        property="twitter:description"
-        content="Com o rpgsheet, você cria fichas de personagens e usa as fichas em sessões de RPG presenciais com o celular, ou sessões online direto do computador."
-      />
-      <meta
-        property="twitter:image"
-        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
-      />
+      <meta name="twitter:title" content={pageTitle} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@rocketseat" />
+      <meta name="twitter:creator" content="@rocketseat" />
+      <meta name="twitter:image" content={pageImage} />
+      <meta name="twitter:image:src" content={pageImage} />
+      <meta name="twitter:image:alt" content="Logo da rpgsheet" />
+      <meta name="twitter:image:width" content="1200" />
+      <meta name="twitter:image:height" content="620" />
     </Head>
   )
 }
