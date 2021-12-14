@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { signIn } from 'next-auth/react'
 import { Button, Center, Flex, Stack } from '@chakra-ui/react'
 
-import { Logo } from '~/components'
+import { Logo } from '~/components/logo'
 
 function Home() {
   return (

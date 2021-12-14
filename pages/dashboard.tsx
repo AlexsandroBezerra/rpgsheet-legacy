@@ -1,11 +1,11 @@
-import { useSession } from 'next-auth/react'
-import { Center, Spinner } from '@chakra-ui/react'
-
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
+import { useSession } from 'next-auth/react'
+
+import { PageLoader } from '~/components/page-loader'
 
 const Dashboard = dynamic<{}>(() => import('~/pages/Dashboard').then(mod => mod.Dashboard), {
-  loading: () => <>Carregando...</>
+  loading: () => <PageLoader />
 })
 
 function DashboardPage() {
@@ -19,11 +19,7 @@ function DashboardPage() {
   })
 
   if (status === 'loading') {
-    return (
-      <Center h="100vh">
-        <Spinner />
-      </Center>
-    )
+    return <PageLoader />
   }
 
   return <Dashboard />

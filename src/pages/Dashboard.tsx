@@ -2,7 +2,8 @@ import Head from 'next/head'
 import { signOut } from 'next-auth/react'
 import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react'
 
-import { Header, Sidebar } from '../components'
+import { Header } from '../components/header'
+import { Sidebar } from '../components/sidebar'
 
 export function Dashboard() {
   return (

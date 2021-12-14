@@ -1,9 +1,9 @@
 import { Flex, Icon, IconButton, useBreakpointValue } from '@chakra-ui/react'
 import { RiMenuLine } from 'react-icons/ri'
-import { useSidebarDrawer } from '~/contexts'
 
-import { Logo } from '..'
+import { Logo } from '../logo'
 import { Profile } from './profile'
+import { useSidebarDrawer } from '~/contexts/sidebar-drawer'
 
 export function Header() {
   const { onOpen } = useSidebarDrawer()
