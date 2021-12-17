@@ -1,28 +1,27 @@
-import dynamic from 'next/dynamic'
-import { useRouter } from 'next/router'
-import { useSession } from 'next-auth/react'
+import Head from 'next/head'
+import { signOut, useSession } from 'next-auth/react'
 
-import { PageLoader } from '~/components/page-loader'
+import { withAuthentication } from '~/hoc/withAuthentication'
 
-const Dashboard = dynamic<{}>(() => import('~/pages/Dashboard').then(mod => mod.Dashboard), {
-  loading: () => <PageLoader />
-})
+function Home() {
+  const { data: session } = useSession()
 
-function DashboardPage() {
-  const router = useRouter()
+  return (
+    <>
+      <Head>
+        <title>Dashoard | rpgsheet</title>
+      </Head>
 
-  const { status } = useSession({
-    required: true,
-    onUnauthenticated() {
-      router.push('/')
-    }
-  })
+      <h1>Dashboard</h1>
+      <h2>
+        Signed with: {session?.user?.name} - {session?.user?.email}
+      </h2>
 
-  if (status === 'loading') {
-    return <PageLoader />
-  }
-
-  return <Dashboard />
+      <button type="button" onClick={() => signOut({ callbackUrl: '/' })}>
+        Sign out
+      </button>
+    </>
+  )
 }
 
-export default DashboardPage
+export default withAuthentication(Home)
