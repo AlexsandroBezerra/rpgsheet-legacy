@@ -1,31 +1,27 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { signIn } from 'next-auth/react'
-import { Button, Center, Flex, Stack } from '@chakra-ui/react'
-
-import { Logo } from '~/components/logo'
 
 function Home() {
+  const { query } = useRouter()
+
   return (
     <>
       <Head>
         <title>rpgsheet</title>
       </Head>
 
-      <Center w="100vw" h="100vh">
-        <Stack w="100%" maxWidth={360} bg="gray.800" p="2rem" borderRadius="0.5rem" spacing="1rem">
-          <Flex justify="center">
-            <Logo />
-          </Flex>
+      <h1>rpgsheet</h1>
 
-          <Button type="button" onClick={() => signIn('github', { callbackUrl: '/dashboard' })}>
-            Entrar com o Github
-          </Button>
+      <button type="button" onClick={() => signIn('github', { callbackUrl: '/dashboard' })}>
+        Sign in with github
+      </button>
 
-          <Button type="button" onClick={() => signIn('google', { callbackUrl: '/dashboard' })}>
-            Entrar com o Google
-          </Button>
-        </Stack>
-      </Center>
+      <button type="button" onClick={() => signIn('google', { callbackUrl: '/dashboard' })}>
+        Sign in with google
+      </button>
+
+      <p>{query.error && 'Erro ao fazer login'}</p>
     </>
   )
 }

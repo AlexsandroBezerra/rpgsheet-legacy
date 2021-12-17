@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   run-linters:
-    name: Check lint
+    name: Run linters
     runs-on: ubuntu-latest
 
     steps:
@@ -14,8 +14,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 'lts/*'
-          # cache: 'yarn'
+          node-version: '14'
+          cache: 'yarn'
 
       - name: Install Node.js dependencies
         run: yarn install
