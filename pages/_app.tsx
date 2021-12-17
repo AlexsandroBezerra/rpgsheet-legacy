@@ -2,9 +2,8 @@ import type { AppProps } from 'next/app'
 import { SessionProvider } from 'next-auth/react'
 import { ChakraProvider } from '@chakra-ui/react'
 
-import { SidebarDrawerProvider } from '~/contexts/sidebar-drawer'
 import { theme } from '~/assets/theme'
-import { SEO } from '~/components/seo'
+import { SidebarDrawerProvider } from '~/contexts/sidebar-drawer'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -14,8 +13,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </SidebarDrawerProvider>
       </ChakraProvider>
-
-      <SEO />
     </SessionProvider>
   )
 }
