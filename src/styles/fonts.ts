@@ -40,6 +40,6 @@ export const fontWeights: Typography<number> = {
 }
 
 export const lineHeights: Typography = {
-  body: '1.5rem',
-  heading: '1.25rem'
+  body: 'initial',
+  heading: 'initial'
 }

@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { signOut, useSession } from 'next-auth/react'
-import { Button, Heading } from 'rebass/styled-components'
+import { Heading } from 'rebass/styled-components'
 
+import { Button } from '~/components/Button'
 import { withAuthentication } from '~/hoc/withAuthentication'
 
 function Home() {
