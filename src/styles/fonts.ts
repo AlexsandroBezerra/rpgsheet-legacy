@@ -30,8 +30,8 @@ export const fontSizes: FontSizes = {
 }
 
 export const fonts: Typography = {
-  body: 'Roboto, sans-serif',
-  heading: 'Roboto, sans-serif'
+  body: "'Roboto', sans-serif",
+  heading: "'Roboto', sans-serif"
 }
 
 export const fontWeights: Typography<number> = {

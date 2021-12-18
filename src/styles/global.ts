@@ -12,6 +12,7 @@ export const GlobalTheme = createGlobalStyle`
   }
 
   body {
+    font-family: 'Roboto', sans-serif;
     background: ${theme('global.body.bg')};
     color: ${theme('global.body.color')};
   }
