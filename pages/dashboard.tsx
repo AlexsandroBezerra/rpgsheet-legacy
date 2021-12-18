@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { signOut, useSession } from 'next-auth/react'
+import { Button, Heading } from 'rebass/styled-components'
 
 import { withAuthentication } from '~/hoc/withAuthentication'
 
@@ -12,14 +13,14 @@ function Home() {
         <title>Dashoard | rpgsheet</title>
       </Head>
 
-      <h1>Dashboard</h1>
-      <h2>
+      <Heading as="h1">Dashboard</Heading>
+      <Heading>
         Signed with: {session?.user?.name} - {session?.user?.email}
-      </h2>
+      </Heading>
 
-      <button type="button" onClick={() => signOut({ callbackUrl: '/' })}>
+      <Button type="button" onClick={() => signOut({ callbackUrl: '/' })}>
         Sign out
-      </button>
+      </Button>
     </>
   )
 }

@@ -2,6 +2,8 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { signIn } from 'next-auth/react'
 
+import { Button, Heading, Text } from 'rebass/styled-components'
+
 function Home() {
   const { query } = useRouter()
 
@@ -11,17 +13,17 @@ function Home() {
         <title>rpgsheet</title>
       </Head>
 
-      <h1>rpgsheet</h1>
+      <Heading as="h1">rpgsheet</Heading>
 
-      <button type="button" onClick={() => signIn('github', { callbackUrl: '/dashboard' })}>
+      <Button type="button" onClick={() => signIn('github', { callbackUrl: '/dashboard' })}>
         Sign in with github
-      </button>
+      </Button>
 
-      <button type="button" onClick={() => signIn('google', { callbackUrl: '/dashboard' })}>
+      <Button type="button" onClick={() => signIn('google', { callbackUrl: '/dashboard' })}>
         Sign in with google
-      </button>
+      </Button>
 
-      <p>{query.error && 'Erro ao fazer login'}</p>
+      <Text>{query.error && 'Erro ao fazer login'}</Text>
     </>
   )
 }
