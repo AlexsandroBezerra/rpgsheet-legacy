@@ -24,4 +24,17 @@ export const GlobalTheme = createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+    html {
+      font-size: 93.75%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    html {
+      font-size: 87.5%;
+    }
+  }
+
 `
