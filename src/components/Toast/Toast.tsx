@@ -33,7 +33,7 @@ export function Toast({ message, style }: ToastProps) {
   }, [message.id, removeToast])
 
   return (
-    <Container hasDescription={Number(!!message.description)} type={message.type} style={style}>
+    <Container type={message.type} style={style}>
       {icons[message.type || 'default']}
 
       <div>

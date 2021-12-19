@@ -1,10 +1,9 @@
 import styled, { css } from 'styled-components'
 import { animated } from 'react-spring'
-import { ifProp, theme } from 'styled-tools'
+import { theme } from 'styled-tools'
 
 interface ContainerProps {
   type?: 'default' | 'success' | 'error'
-  hasDescription?: number
 }
 
 const toastTypeVariations = {
@@ -25,33 +24,35 @@ const toastTypeVariations = {
 }
 
 export const Container = styled(animated.div)<ContainerProps>`
-  width: 360px;
-  padding: 16px;
-  border-radius: 10px;
+  width: 100%;
+  max-width: 22.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 
   position: relative;
   display: flex;
   align-items: center;
+  margin-left: auto;
 
   & + div {
-    margin-top: 8px;
+    margin-top: 0.5rem;
   }
 
   ${props => toastTypeVariations[props.type || 'default']}
 
   > svg {
-    margin: 4px 12px 0 0;
+    margin: 0.5rem 0.75rem 0 0;
   }
 
   div {
     flex: 1;
 
     p {
-      margin-top: 4px;
-      font-size: 14px;
+      margin-top: 0.25rem;
+      font-size: 0.875rem;
       opacity: 0.8;
-      line-height: 20px;
+      line-height: 1.25rem;
     }
   }
 
@@ -63,16 +64,6 @@ export const Container = styled(animated.div)<ContainerProps>`
 
     display: flex;
     align-items: center;
+    margin-left: 0.25rem;
   }
-
-  ${ifProp(
-    'hasDescription',
-    css`
-      align-items: center;
-
-      svg {
-        margin-top 0;
-      }
-    `
-  )}
 `

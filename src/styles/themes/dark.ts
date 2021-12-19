@@ -25,10 +25,12 @@ export const darkTheme: DefaultTheme = {
       background: colors.blue[200],
       color: colors.gray[900]
     },
+
     error: {
       background: colors.red[200],
       color: colors.gray[900]
     },
+
     success: {
       background: colors.green[200],
       color: colors.gray[900]

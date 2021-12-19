@@ -6,7 +6,7 @@ function HomePage() {
   return (
     <>
       <Head>
-        <title>rpgsheet</title>
+        <title>Login | rpgsheet</title>
       </Head>
 
       <Home />
