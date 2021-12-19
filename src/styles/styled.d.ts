@@ -5,6 +5,9 @@ export interface Typography<T = string> {
   heading: T
 }
 
+export type ColorVariants = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
+export type ColorRecord = Record<ColorVariants, string>
+
 export interface Colors {
   primary: string
   primaryHover: string
@@ -12,18 +15,10 @@ export interface Colors {
   white: string
   black: string
 
-  gray: {
-    900: string
-    800: string
-    700: string
-    600: string
-    500: string
-    400: string
-    300: string
-    200: string
-    100: string
-    50: string
-  }
+  red: ColorRecord
+  green: ColorRecord
+  blue: ColorRecord
+  gray: ColorRecord
 }
 
 export interface FontSizes extends Typography {
@@ -59,6 +54,13 @@ export interface GlobalStyle {
   }
 }
 
+export type ToastVariants = 'default' | 'success' | 'error'
+
+export interface ToastVariant {
+  background: string
+  color: string
+}
+
 declare module 'styled-components' {
   export interface DefaultTheme {
     title: string
@@ -69,5 +71,7 @@ declare module 'styled-components' {
     fonts: Typography
     lineHeights: Typography
     fontWeights: Typography<number>
+
+    toast: Record<ToastVariants, ToastVariant>
   }
 }

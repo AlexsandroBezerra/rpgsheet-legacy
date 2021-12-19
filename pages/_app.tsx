@@ -4,15 +4,18 @@ import { ThemeProvider } from 'styled-components'
 
 import { darkTheme } from '~/styles/themes/dark'
 import { GlobalTheme } from '~/styles/global'
+import { ToastProvider } from '~/contexts/Toast/ToastProvider'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={darkTheme}>
-      <SessionProvider session={pageProps.session}>
-        <Component {...pageProps} />
-      </SessionProvider>
+      <ToastProvider>
+        <SessionProvider session={pageProps.session}>
+          <Component {...pageProps} />
+        </SessionProvider>
 
-      <GlobalTheme />
+        <GlobalTheme />
+      </ToastProvider>
     </ThemeProvider>
   )
 }
