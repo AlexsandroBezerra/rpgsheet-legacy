@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { animated } from 'react-spring'
 import { theme } from 'styled-tools'
 
-interface ContainerProps {
+type ContainerProps = {
   type?: 'default' | 'success' | 'error'
 }
 

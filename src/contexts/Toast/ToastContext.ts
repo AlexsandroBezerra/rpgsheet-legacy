@@ -1,6 +1,6 @@
 import { createContext } from 'react'
 
-export interface ToastMessage {
+export type ToastMessage = {
   id: string
   type?: 'default' | 'success' | 'error'
   title: string
@@ -9,7 +9,7 @@ export interface ToastMessage {
 
 export type AddToastProps = Omit<ToastMessage, 'id'>
 
-interface ToastContextData {
+type ToastContextData = {
   addToast(message: AddToastProps): void
   removeToast(id: string): void
 }

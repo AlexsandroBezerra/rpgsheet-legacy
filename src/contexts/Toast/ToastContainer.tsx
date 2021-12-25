@@ -6,7 +6,7 @@ import { Toast } from '~/components/Toast'
 import { ToastMessage } from './ToastContext'
 import { Container } from './styles'
 
-interface ToastContainerProps {
+type ToastContainerProps = {
   messages: ToastMessage[]
 }
 

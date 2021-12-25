@@ -1,6 +1,6 @@
 import 'styled-components'
 
-export interface Typography<T = string> {
+export type Typography<T = string> = {
   body: T
   heading: T
 }
@@ -26,7 +26,7 @@ export type LineHeights = Typography & {
 export type ColorVariants = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
 export type ColorRecord = Record<ColorVariants, string>
 
-export interface Colors {
+export type Colors = {
   primary: string
   primaryHover: string
 
@@ -39,7 +39,7 @@ export interface Colors {
   gray: ColorRecord
 }
 
-export interface FontSizes extends Typography {
+export type FontSizes = Typography & {
   xs: string
   sm: string
   md: string
@@ -65,7 +65,7 @@ export interface FontSizes extends Typography {
   8: number
 }
 
-export interface GlobalStyle {
+export type GlobalStyle = {
   body: {
     bg: string
     color: string
@@ -74,13 +74,13 @@ export interface GlobalStyle {
 
 export type ToastVariants = 'default' | 'success' | 'error'
 
-export interface ToastVariant {
+export type ToastVariant = {
   background: string
   color: string
 }
 
 declare module 'styled-components' {
-  export interface DefaultTheme {
+  export type DefaultTheme = {
     title: string
     colors: Colors
     fontSizes: FontSizes

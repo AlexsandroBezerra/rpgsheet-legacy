@@ -6,7 +6,7 @@ import { useToast } from '~/hooks/useToast'
 
 import { Container } from './styles'
 
-interface ToastProps {
+type ToastProps = {
   message: ToastMessage
   style: object
 }
