@@ -1,6 +1,7 @@
 import type { DefaultTheme } from 'styled-components'
 
 import { colors } from '../colors'
+import { breakpoints } from '../breakpoints'
 import { fonts, fontSizes, fontWeights, lineHeights } from '../fonts'
 
 export const darkTheme: DefaultTheme = {
@@ -12,6 +13,7 @@ export const darkTheme: DefaultTheme = {
   fontSizes,
   fontWeights,
   lineHeights,
+  breakpoints,
 
   global: {
     body: {

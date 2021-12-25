@@ -25,16 +25,15 @@ export const GlobalTheme = createGlobalStyle`
     cursor: pointer;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 48em) {
     html {
       font-size: 93.75%;
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 30em) {
     html {
       font-size: 87.5%;
     }
   }
-
 `

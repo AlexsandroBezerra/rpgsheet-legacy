@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 import { theme } from 'styled-tools'
-import { Heading, Text } from 'rebass/styled-components'
+import { Text } from 'rebass/styled-components'
 
-export const LogoContainer = styled(Heading)`
+export const LogoContainer = styled(Text)`
   font-weight: bold;
   letter-spacing: -0.025em;
-  font-size: ${theme('fontSizes.3xl')};
 `
 
 export const LogoDot = styled(Text)`

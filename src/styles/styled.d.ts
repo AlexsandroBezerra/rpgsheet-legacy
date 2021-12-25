@@ -85,6 +85,7 @@ declare module 'styled-components' {
     colors: Colors
     fontSizes: FontSizes
     global: GlobalStyle
+    breakpoints: string[]
 
     fonts: Typography
     lineHeights: Typography
