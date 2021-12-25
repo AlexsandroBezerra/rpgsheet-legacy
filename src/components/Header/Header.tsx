@@ -11,7 +11,7 @@ export function Header() {
       <Logo />
 
       <Box ml="auto">
-        <Profile name="Alexsandro G Bezerra" src="https://github.com/AlexsandroBezerra.png" />
+        <Profile />
       </Box>
     </Container>
   )

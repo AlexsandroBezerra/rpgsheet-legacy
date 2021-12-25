@@ -1,23 +1,21 @@
+import { useSession } from 'next-auth/react'
 import { Flex, Text } from 'rebass/styled-components'
 import { AvatarImage, ProfileDataContainer } from './styles'
 
-type ProfileProps = {
-  name: string
-  src: string
-}
+export function Profile() {
+  const { data } = useSession()
 
-export function Profile({ src, name }: ProfileProps) {
   return (
     <Flex alignItems="center">
       <ProfileDataContainer>
-        <Text lineHeight="base">Alexsandro Bezerra</Text>
+        <Text lineHeight="base">{data?.user?.name}</Text>
 
         <Text color="gray.300" fontSize="small" lineHeight="short">
-          alexsandro.g.bezerra@gmail.com
+          {data?.user?.email}
         </Text>
       </ProfileDataContainer>
 
-      <AvatarImage src={src} alt={name} />
+      <AvatarImage src={data?.user?.image as string} alt={data?.user?.name as string} />
     </Flex>
   )
 }
