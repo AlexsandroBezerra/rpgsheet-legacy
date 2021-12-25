@@ -1,4 +1,4 @@
-import type { Typography, FontSizes } from './styled'
+import type { Typography, FontSizes, LineHeights } from './styled'
 
 export const fontSizes: FontSizes = {
   xs: '0.75rem',
@@ -39,7 +39,23 @@ export const fontWeights: Typography<number> = {
   heading: 700
 }
 
-export const lineHeights: Typography = {
-  body: 'initial',
-  heading: 'initial'
+export const lineHeights: LineHeights = {
+  body: '1.5rem',
+  heading: '1.2',
+
+  normal: 'normal',
+  none: 1,
+  shorter: 1.25,
+  short: 1.375,
+  base: 1.5,
+  tall: 1.625,
+  taller: '2',
+  3: '.75rem',
+  4: '1rem',
+  5: '1.25rem',
+  6: '1.5rem',
+  7: '1.75rem',
+  8: '2rem',
+  9: '2.25rem',
+  10: '2.5rem'
 }

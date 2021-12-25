@@ -5,6 +5,24 @@ export interface Typography<T = string> {
   heading: T
 }
 
+export type LineHeights = Typography & {
+  normal: string | number
+  none: string | number
+  shorter: string | number
+  short: string | number
+  base: string | number
+  tall: string | number
+  taller: string | number
+  3: string | number
+  4: string | number
+  5: string | number
+  6: string | number
+  7: string | number
+  8: string | number
+  9: string | number
+  10: string | number
+}
+
 export type ColorVariants = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
 export type ColorRecord = Record<ColorVariants, string>
 
