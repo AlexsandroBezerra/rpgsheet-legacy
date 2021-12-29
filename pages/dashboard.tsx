@@ -1,13 +1,27 @@
 import Head from 'next/head'
-import { signOut } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 import { Box, Heading, Flex } from 'rebass/styled-components'
+import { useRouter } from 'next/router'
 
 import { Button } from '~/components/Button'
-import { withAuthentication } from '~/hoc/withAuthentication'
 import { Header } from '~/components/Header'
 import { Sidebar } from '~/components/Sidebar/Sidebar'
+import { PageLoader } from '~/components/PageLoader'
 
 function Home() {
+  const router = useRouter()
+
+  const { status } = useSession({
+    required: true,
+    onUnauthenticated() {
+      router.push('/')
+    }
+  })
+
+  if (status === 'loading') {
+    return <PageLoader />
+  }
+
   return (
     <>
       <Head>
@@ -31,4 +45,4 @@ function Home() {
   )
 }
 
-export default withAuthentication(Home)
+export default Home
