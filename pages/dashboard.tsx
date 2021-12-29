@@ -1,24 +1,16 @@
 import Head from 'next/head'
-import { signOut, useSession } from 'next-auth/react'
-import { Box, Heading, Flex } from 'rebass/styled-components'
-import { useRouter } from 'next/router'
+import { Heading } from 'rebass/styled-components'
 
 import { Button } from '~/components/Button'
-import { Header } from '~/components/Header'
-import { Sidebar } from '~/components/Sidebar/Sidebar'
 import { PageLoader } from '~/components/PageLoader'
+import { NavigationLayout } from '~/components/NavigationLayout'
+import { useAuthentication } from '~/hooks/useAuthentication'
+import { signOut } from '~/utils/signOut'
 
 function Home() {
-  const router = useRouter()
+  const { isLoading } = useAuthentication()
 
-  const { status } = useSession({
-    required: true,
-    onUnauthenticated() {
-      router.push('/')
-    }
-  })
-
-  if (status === 'loading') {
+  if (isLoading) {
     return <PageLoader />
   }
 
@@ -28,19 +20,13 @@ function Home() {
         <title>Dashoard | rpgsheet</title>
       </Head>
 
-      <Header />
+      <NavigationLayout>
+        <Heading as="h1">Dashboard</Heading>
 
-      <Flex as="main" width="100%" maxWidth={1480} mx="auto" px="1.5rem" my="1.5rem">
-        <Sidebar />
-
-        <Box as="main">
-          <Heading as="h1">Dashboard</Heading>
-
-          <Button type="button" onClick={() => signOut({ callbackUrl: '/' })}>
-            Sign out
-          </Button>
-        </Box>
-      </Flex>
+        <Button type="button" onClick={signOut}>
+          Sign out
+        </Button>
+      </NavigationLayout>
     </>
   )
 }
