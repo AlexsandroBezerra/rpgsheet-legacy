@@ -5,7 +5,7 @@ export type Typography<T = string> = {
   heading: T
 }
 
-export type LineHeights = Typography & {
+export type LineHeights = Typography<number> & {
   normal: string | number
   none: string | number
   shorter: string | number
@@ -37,6 +37,7 @@ export type Colors = {
   green: ColorRecord
   blue: ColorRecord
   gray: ColorRecord
+  pink: ColorRecord
 }
 
 export type FontSizes = Typography & {

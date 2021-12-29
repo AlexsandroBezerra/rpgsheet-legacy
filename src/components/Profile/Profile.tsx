@@ -16,7 +16,7 @@ export function Profile({ showProfileData = true }: ProfileProps) {
         <ProfileDataContainer>
           <Text lineHeight="base">{data?.user?.name}</Text>
 
-          <Text color="gray.300" fontSize="small" lineHeight="short">
+          <Text color="gray.300" fontSize="small" lineHeight="base">
             {data?.user?.email}
           </Text>
         </ProfileDataContainer>

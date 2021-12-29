@@ -1,5 +1,5 @@
 import { ForwardedRef, forwardRef } from 'react'
-import type { ButtonProps } from 'rebass'
+import type { ButtonProps } from 'rebass/styled-components'
 
 import { ButtonContainer } from './styles'
 

@@ -10,7 +10,7 @@ export function Header() {
   const { isGreaterThanSmall } = useBreakpoints()
 
   return (
-    <Container>
+    <Container as="header">
       <Logo />
 
       <Box ml="auto">

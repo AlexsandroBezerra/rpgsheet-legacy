@@ -26,7 +26,7 @@ export function Home() {
   return (
     <Center height="100vh">
       <SignInContainer as="main">
-        <Center my="0.25rem">
+        <Center>
           <Logo />
         </Center>
 
